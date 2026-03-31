@@ -38,7 +38,7 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative mx-auto w-full max-w-6xl px-5 py-12 sm:px-8 sm:py-24 lg:px-12">
-        <div className="-mt-20 flex flex-col items-center space-y-4 text-center sm:mt-0 sm:max-w-2xl sm:items-start sm:space-y-6 sm:text-left">
+        <div className="mt-8 flex flex-col items-center space-y-4 text-center sm:mt-0 sm:max-w-2xl sm:items-start sm:space-y-6 sm:text-left">
           {/* Eyebrow */}
           <div
             className="hidden transition-all duration-1000 ease-[var(--ease-out-expo)] sm:block"
