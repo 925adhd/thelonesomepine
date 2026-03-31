@@ -124,7 +124,7 @@ export function Hero() {
             </Link>
             <Link
               href="/contact"
-              className="text-xs font-medium text-white/70 underline decoration-white/25 underline-offset-4 transition-colors hover:text-white sm:no-underline sm:rounded-full sm:border sm:border-white/20 sm:bg-white/5 sm:px-10 sm:py-4 sm:text-base sm:text-white/85 sm:backdrop-blur-sm sm:hover:border-white/35 sm:hover:bg-white/10 sm:active:scale-[0.98]"
+              className="hidden sm:inline-flex sm:rounded-full sm:border sm:border-white/20 sm:bg-white/5 sm:px-10 sm:py-4 sm:text-base sm:text-white/85 sm:backdrop-blur-sm sm:hover:border-white/35 sm:hover:bg-white/10 sm:active:scale-[0.98]"
             >
               Visit Us
             </Link>

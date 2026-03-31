@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { StickyLocationPin } from "@/components/ui/StickyLocationPin";
 import { baseMetadata } from "@/config/metadata";
 import { getLocalBusinessSchema } from "@/lib/structured-data";
 import "./globals.css";
@@ -46,6 +47,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <StickyLocationPin />
       </body>
     </html>
   );
