@@ -8,9 +8,10 @@ interface ScrollVideoProps {
   className?: string;
   playbackRate?: number;
   endAt?: number;
+  fastStart?: { until: number; rate: number };
 }
 
-export function ScrollVideo({ src, className = "", playbackRate = 1, endAt }: ScrollVideoProps) {
+export function ScrollVideo({ src, className = "", playbackRate = 1, endAt, fastStart }: ScrollVideoProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hasTriggered, setHasTriggered] = useState(false);
@@ -30,15 +31,20 @@ export function ScrollVideo({ src, className = "", playbackRate = 1, endAt }: Sc
 
           // Small delay so the reveal animation starts first
           setTimeout(() => {
-            video.playbackRate = playbackRate;
-            if (endAt) {
-              const checkTime = () => {
-                if (video.currentTime >= endAt) {
-                  video.pause();
-                  return;
-                }
+            video.playbackRate = fastStart ? fastStart.rate : playbackRate;
+            const checkTime = () => {
+              if (fastStart && video.currentTime >= fastStart.until) {
+                video.playbackRate = playbackRate;
+              }
+              if (endAt && video.currentTime >= endAt) {
+                video.pause();
+                return;
+              }
+              if (!video.paused) {
                 requestAnimationFrame(checkTime);
-              };
+              }
+            };
+            if (fastStart || endAt) {
               requestAnimationFrame(checkTime);
             }
             video.play().catch(() => {

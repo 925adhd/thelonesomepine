@@ -34,23 +34,21 @@ export function FeaturedPlants() {
 
       <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
         {/* Section header */}
-        <ScrollReveal>
-          <div className="max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              Hand-Picked
-            </p>
-            <h2
-              id="featured-heading"
-              className="heading-accent mt-3 font-[family-name:var(--font-playfair)] text-3xl font-medium text-primary sm:text-4xl lg:text-5xl"
-            >
-              Featured Plants
-            </h2>
-            <p className="mt-6 text-base leading-relaxed text-text-muted sm:text-lg">
-              A few of our favorites, curated for plant lovers of all
-              experience levels.
-            </p>
-          </div>
-        </ScrollReveal>
+        <div className="max-w-xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+            Hand-Picked
+          </p>
+          <h2
+            id="featured-heading"
+            className="heading-accent mt-3 font-[family-name:var(--font-playfair)] text-3xl font-medium text-primary sm:text-4xl lg:text-5xl"
+          >
+            Featured Plants
+          </h2>
+          <p className="mt-6 text-base leading-relaxed text-text-muted sm:text-lg">
+            A few of our favorites, curated for plant lovers of all
+            experience levels.
+          </p>
+        </div>
 
         {/* Asymmetric grid */}
         <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-12">

@@ -14,7 +14,7 @@ export function Hero() {
 
   return (
     <section
-      className="grain relative flex min-h-[75vh] items-center overflow-hidden bg-pine-950 sm:min-h-screen sm:items-center"
+      className="grain relative flex min-h-[75vh] items-center overflow-hidden bg-pine-950 -mb-1 sm:min-h-screen sm:items-center sm:mb-0"
       aria-label="Welcome"
     >
       {/* Background image with ken burns effect */}

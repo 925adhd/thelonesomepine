@@ -15,6 +15,7 @@ export function AboutPreview() {
       <ScrollVideo
         src="/images/plant-growing-roots-animation.mp4"
         className="pointer-events-none absolute -top-16 bottom-1/3 left-0 right-0 scale-75 opacity-[0.08] mix-blend-multiply sm:bottom-0 sm:top-0 sm:scale-100 sm:opacity-[0.09]"
+        fastStart={{ until: 1, rate: 2 }}
       />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
