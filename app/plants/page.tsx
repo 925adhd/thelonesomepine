@@ -10,23 +10,26 @@ export const metadata: Metadata = {
   title: "Our Plants",
   description:
     "Browse our selection of unique and healthy houseplants at The Lonesome Pine in Leitchfield, Kentucky. Succulents, tropicals, trailing plants, and more.",
+  alternates: {
+    canonical: "/plants",
+  },
 };
 
 const plantImageMap: Record<string, { src: string; alt: string }> = {
   "pothos-golden": plantImages.goldenPothos,
-  "snake-plant": plantImages.zebraPlant,
-  "monstera-deliciosa": plantImages.dieffenbachia,
-  "succulent-echeveria": plantImages.stringOfPearls,
-  "fern-boston": plantImages.trailingPlant,
-  lavender: plantImages.christmasCactus,
-  "hydrangea-blue": plantImages.norfolkPine,
-  "tomato-cherry": plantImages.spiderPlant,
+  "zebra-plant": plantImages.zebraPlant,
+  dieffenbachia: plantImages.dieffenbachia,
+  "christmas-cactus": plantImages.christmasCactus,
+  "spider-plant": plantImages.spiderPlant,
+  "string-of-pearls": plantImages.stringOfPearls,
+  tradescantia: plantImages.trailingPlant,
+  "norfolk-pine": plantImages.norfolkPine,
 };
 
 const categoryOrder: PlantCategory[] = [
   "Houseplants",
-  "Outdoor Plants",
   "Succulents",
+  "Outdoor Plants",
   "Vegetable Starts",
 ];
 
@@ -41,7 +44,7 @@ export default function PlantsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex items-end overflow-hidden bg-primary-dark pb-10 pt-32 sm:pb-14 sm:pt-36">
+      <section className="relative flex items-end overflow-hidden bg-primary-dark pb-10 pt-36 sm:pb-14 sm:pt-40">
         <div className="absolute inset-0">
           <Image
             src={storeImages.plantDisplay.src}

@@ -16,7 +16,7 @@ export function Footer() {
           <div className="flex items-center gap-4 sm:items-start">
             <Link href="/">
               <Image
-                src="/images/logotransparent.png"
+                src="/images/logotransparent.webp"
                 alt={siteConfig.name}
                 width={100}
                 height={100}
@@ -44,14 +44,14 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Right side — links + hours + contact inline */}
-          <div className="flex flex-wrap gap-12 text-sm">
+          {/* Right side — links + hours + contact */}
+          <div className="grid grid-cols-2 gap-8 text-sm sm:flex sm:flex-wrap sm:gap-12">
             {/* Links */}
             <div>
               <h3 className="text-[10px] font-semibold uppercase tracking-widest text-pine-500">
                 Navigate
               </h3>
-              <ul className="mt-2 flex gap-4 sm:flex-col sm:gap-1.5" role="list">
+              <ul className="mt-2 flex flex-col gap-1.5" role="list">
                 {siteConfig.navigation.map((item) => (
                   <li key={item.href}>
                     <Link
@@ -132,8 +132,24 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Legal links */}
+        <div className="mt-8 flex flex-wrap gap-x-4 gap-y-1 border-t border-pine-800/30 pt-5 text-xs text-pine-500/60">
+          <Link href="/privacy" className="transition-colors hover:text-pine-300">
+            Privacy Policy
+          </Link>
+          <Link href="/terms" className="transition-colors hover:text-pine-300">
+            Terms of Service
+          </Link>
+          <Link href="/cookies" className="transition-colors hover:text-pine-300">
+            Cookie Policy
+          </Link>
+          <Link href="/disclaimer" className="transition-colors hover:text-pine-300">
+            Disclaimer
+          </Link>
+        </div>
+
         {/* Bottom bar */}
-        <div className="mt-8 flex flex-col items-center justify-between gap-1 border-t border-pine-800/30 pt-5 text-xs text-pine-400 sm:flex-row">
+        <div className="mt-4 flex flex-col items-center justify-between gap-1 pt-3 text-xs text-pine-400 sm:flex-row">
           <p>&copy; {currentYear} {siteConfig.name}. Leitchfield, KY.</p>
           <a
             href="https://studio925.design"

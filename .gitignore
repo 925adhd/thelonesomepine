@@ -40,6 +40,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# client assets
+client-info
+assets
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

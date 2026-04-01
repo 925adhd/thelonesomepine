@@ -5,17 +5,19 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyLocationPin } from "@/components/ui/StickyLocationPin";
 import { baseMetadata } from "@/config/metadata";
-import { getLocalBusinessSchema } from "@/lib/structured-data";
+import { getLocalBusinessSchema, getOrganizationSchema } from "@/lib/structured-data";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
   variable: "--font-inter",
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
   variable: "--font-playfair",
 });
@@ -33,19 +35,30 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const structuredData = getLocalBusinessSchema();
+  const localBusinessSchema = getLocalBusinessSchema();
+  const organizationSchema = getOrganizationSchema();
 
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} ${western.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${playfair.variable} ${western.variable}`}>
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
       <body className="flex min-h-screen flex-col bg-surface font-[family-name:var(--font-inter)]">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-white focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">{children}</main>
         <Footer />
         <StickyLocationPin />
       </body>

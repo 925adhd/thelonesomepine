@@ -14,7 +14,8 @@ const galleryItems = [
 export function PlantGallery() {
   return (
     <section
-      className="relative overflow-hidden bg-surface-warm py-24 sm:py-32"
+      id="gallery"
+      className="scroll-mt-20 relative overflow-hidden bg-surface-warm py-24 sm:py-32"
       aria-labelledby="gallery-heading"
     >
 
@@ -51,7 +52,7 @@ export function PlantGallery() {
           {galleryItems.map((image, i) => (
             <ScrollReveal key={image.src} delay={i * 80} animation="scale">
               <div className="group mb-4 overflow-hidden rounded-xl lg:mb-5">
-                <div className="relative aspect-[3/4] sm:aspect-auto">
+                <div className="relative">
                   <Image
                     src={image.src}
                     alt={image.alt}

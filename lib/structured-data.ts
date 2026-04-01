@@ -48,6 +48,27 @@ export function getLocalBusinessSchema() {
   };
 }
 
+export function getOrganizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/images/logotransparent.webp`,
+    email: siteConfig.email,
+    ...(siteConfig.phone ? { telephone: siteConfig.phone } : {}),
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: `${siteConfig.vendorLocation.venue}, ${siteConfig.vendorLocation.street}`,
+      addressLocality: siteConfig.address.city,
+      addressRegion: siteConfig.address.stateCode,
+      postalCode: siteConfig.address.zip,
+      addressCountry: "US",
+    },
+    sameAs: [siteConfig.social.facebook, siteConfig.social.instagram],
+  };
+}
+
 function convertTo24Hr(time12h: string): string {
   if (!time12h) return "";
   const [time, modifier] = time12h.split(" ");

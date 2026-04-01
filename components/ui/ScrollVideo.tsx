@@ -29,7 +29,6 @@ export function ScrollVideo({ src, className = "", playbackRate = 1, endAt, fast
         if (entry.isIntersecting && !hasTriggered) {
           setHasTriggered(true);
 
-          // Small delay so the reveal animation starts first
           setTimeout(() => {
             video.playbackRate = fastStart ? fastStart.rate : playbackRate;
             const checkTime = () => {
@@ -50,15 +49,15 @@ export function ScrollVideo({ src, className = "", playbackRate = 1, endAt, fast
             video.play().catch(() => {
               // Autoplay blocked — that's fine
             });
-          }, 600);
+          }, 200);
         }
       },
-      { threshold: 0.4 }
+      { threshold: 0.15, rootMargin: "0px 0px 100px 0px" }
     );
 
     observer.observe(section);
     return () => observer.disconnect();
-  }, [hasTriggered]);
+  }, [hasTriggered, playbackRate, endAt, fastStart]);
 
   return (
     <div

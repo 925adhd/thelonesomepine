@@ -14,7 +14,7 @@ export function Hero() {
 
   return (
     <section
-      className="grain relative flex min-h-[75vh] items-center overflow-hidden bg-pine-950 -mb-1 sm:min-h-screen sm:items-center sm:mb-0"
+      className="grain relative flex min-h-[75vh] items-center overflow-hidden bg-pine-950 sm:min-h-screen sm:items-center"
       aria-label="Welcome"
     >
       {/* Background image with ken burns effect */}
@@ -26,7 +26,6 @@ export function Hero() {
           className="object-cover"
           priority
           sizes="100vw"
-          quality={85}
         />
       </div>
 
@@ -64,7 +63,7 @@ export function Hero() {
             }}
           >
             <Image
-              src="/images/logotransparent.png"
+              src="/images/logotransparent.webp"
               alt="The Lonesome Pine"
               width={400}
               height={400}
@@ -104,7 +103,7 @@ export function Hero() {
           >
             <Link
               href="/plants"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-xs font-semibold text-pine-900 shadow-lg transition-all duration-300 hover:bg-pine-50 hover:shadow-2xl active:scale-[0.98] sm:px-10 sm:py-4 sm:text-base"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-pine-900 shadow-lg transition-all duration-300 hover:bg-pine-50 hover:shadow-2xl active:scale-[0.98] sm:px-10 sm:py-4 sm:text-base"
             >
               Browse Our Plants
               <svg
@@ -123,7 +122,7 @@ export function Hero() {
               </svg>
             </Link>
             <Link
-              href="/contact"
+              href="/visit"
               className="hidden sm:inline-flex sm:rounded-full sm:border sm:border-white/20 sm:bg-white/5 sm:px-10 sm:py-4 sm:text-base sm:text-white/85 sm:backdrop-blur-sm sm:hover:border-white/35 sm:hover:bg-white/10 sm:active:scale-[0.98]"
             >
               Visit Us
@@ -132,8 +131,8 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-surface to-transparent sm:h-32" />
+      {/* Bottom fade — seamless blend into next section */}
+      <div className="pointer-events-none absolute -bottom-px left-0 right-0 h-24 bg-gradient-to-t from-surface to-transparent sm:h-32" />
 
       <style jsx>{`
         @keyframes kenburns {

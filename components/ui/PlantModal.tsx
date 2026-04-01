@@ -54,39 +54,11 @@ export function PlantModal({ plant, image, open, onClose }: PlantModalProps) {
           open ? "translate-y-0 scale-100" : "translate-y-8 scale-95"
         )}
       >
-        {/* Close button */}
-        <button
-          onClick={onClose}
-          className="absolute right-3 top-3 z-10 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-white/90 text-text-muted shadow-sm backdrop-blur-sm transition-colors hover:text-text"
-          aria-label="Close"
-        >
-          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-
-        {/* Image */}
-        <div className="relative aspect-[4/5] w-full bg-surface-muted sm:aspect-square">
-          {image ? (
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className="object-cover"
-              sizes="(max-width: 640px) 100vw, 512px"
-            />
-          ) : (
-            <div className="flex h-full items-center justify-center text-5xl text-pine-300">
-              🌱
-            </div>
-          )}
-        </div>
-
         {/* Details */}
         <div className="p-6">
           {/* Header */}
-          <div className="flex items-start justify-between gap-4">
-            <div>
+          <div className="flex items-start justify-between gap-3">
+            <div className="min-w-0">
               <p className="text-xs font-medium uppercase tracking-[0.15em] text-text-light">
                 {plant.category}
               </p>
@@ -94,9 +66,20 @@ export function PlantModal({ plant, image, open, onClose }: PlantModalProps) {
                 {plant.name}
               </h3>
             </div>
-            <span className="shrink-0 text-xl font-semibold text-primary">
-              {formatPrice(plant.price)}
-            </span>
+            <div className="flex shrink-0 items-center gap-3">
+              <span className="text-xl font-semibold text-primary">
+                {formatPrice(plant.price)}
+              </span>
+              <button
+                onClick={onClose}
+                className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full text-text-muted transition-colors hover:bg-surface-muted hover:text-text"
+                aria-label="Close"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
           </div>
 
           {/* Badges */}

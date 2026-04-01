@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { IconHeart, IconUsers, IconLeaf } from "@tabler/icons-react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ScrollVideo } from "@/components/ui/ScrollVideo";
-import { BranchDivider, PineTree } from "@/components/ui/Botanicals";
 import { siteConfig } from "@/config/site";
 import { storeImages, plantImages, ownerImages } from "@/data/images";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about The Lonesome Pine — we specialize in unique and healthy houseplants to help you style your home and life. Located inside The Rabbit Hole in Leitchfield, Kentucky.",
+    "Meet Stephanie Barrett and The Lonesome Pine — hand-selected houseplants inside The Rabbit Hole in Leitchfield, Grayson County, Kentucky.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const values = [
@@ -38,7 +41,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Banner */}
-      <section className="relative flex items-end overflow-hidden bg-primary-dark pb-10 pt-32 sm:pb-14 sm:pt-36">
+      <section className="relative flex items-end overflow-hidden bg-primary-dark pb-10 pt-36 sm:pb-14 sm:pt-40">
         <div className="absolute inset-0">
           <Image
             src={storeImages.plantDisplay.src}
@@ -63,10 +66,10 @@ export default function AboutPage() {
       </section>
 
       {/* Story */}
-      <section className="py-24 sm:py-32">
+      <section className="py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
-          <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
-            <ScrollReveal animation="fade-right">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
+            <ScrollReveal animation="fade-right" className="order-2 lg:order-1">
               <div className="space-y-6 text-base leading-relaxed text-text-muted sm:text-lg">
                 <p className="font-[family-name:var(--font-playfair)] text-2xl leading-snug text-text sm:text-3xl">
                   Small shop. Big plant love.
@@ -100,9 +103,9 @@ export default function AboutPage() {
               </div>
             </ScrollReveal>
 
-            <ScrollReveal animation="fade-left" delay={200}>
-              <div className="relative">
-                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-2xl">
+            <ScrollReveal animation="fade-left" delay={200} className="order-1 lg:order-2">
+              <div className="relative mx-auto max-w-sm lg:max-w-none">
+                <div className="relative aspect-square overflow-hidden rounded-2xl shadow-2xl sm:aspect-[3/4]">
                   <Image
                     src={ownerImages.stephanieKids.src}
                     alt={ownerImages.stephanieKids.alt}
@@ -112,18 +115,7 @@ export default function AboutPage() {
                   />
                 </div>
 
-                {/* Overlapping store photo */}
-                <div className="absolute -bottom-8 -left-8 hidden aspect-square w-2/5 overflow-hidden rounded-xl shadow-xl ring-4 ring-white sm:block">
-                  <Image
-                    src={storeImages.vendorBooth.src}
-                    alt={storeImages.vendorBooth.alt}
-                    fill
-                    className="object-cover"
-                    sizes="200px"
-                  />
-                </div>
-
-                <div className="absolute -bottom-6 -right-6 -z-10 h-full w-full rounded-2xl bg-pine-100/60" />
+                <div className="absolute -bottom-6 -right-6 -z-10 hidden h-full w-full rounded-2xl bg-pine-100/60 sm:block" />
               </div>
             </ScrollReveal>
           </div>
@@ -131,9 +123,9 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="relative overflow-hidden bg-[#fff9ef] py-24 sm:py-32">
-        {/* Vine video background */}
-        <div className="pointer-events-none absolute bottom-0 left-[63%] w-full max-w-6xl -translate-x-1/2">
+      <section className="relative overflow-hidden bg-[#fff9ef] py-16 sm:py-24 lg:py-32">
+        {/* Vine video — background on desktop */}
+        <div className="pointer-events-none absolute bottom-0 left-[65%] hidden w-full max-w-6xl -translate-x-1/2 sm:block">
           <ScrollVideo
             src="/images/vine-divider.mp4"
             className="mix-blend-darken opacity-[0.07]"
@@ -170,14 +162,32 @@ export default function AboutPage() {
               </ScrollReveal>
             ))}
           </div>
+
+          {/* Vine video — inline centered on mobile */}
+          <div className="mt-12 origin-center translate-x-[50%] scale-[2] sm:hidden">
+            <ScrollVideo
+              src="/images/vine-divider.mp4"
+              className="mix-blend-darken opacity-[0.15]"
+              playbackRate={1}
+              endAt={2.5}
+            />
+          </div>
         </div>
       </section>
 
 
       {/* Image Gallery Strip */}
-      <section className="py-24 sm:py-32">
+      <section className="py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:gap-5">
+          <ScrollReveal>
+            <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+              From Our Shop
+            </p>
+            <h2 className="heading-accent heading-accent-center mt-3 text-center font-[family-name:var(--font-playfair)] text-2xl font-medium text-primary sm:text-3xl">
+              A Few Favorites
+            </h2>
+          </ScrollReveal>
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:gap-5">
             {[
               plantImages.christmasCactus,
               plantImages.goldenPothos,
@@ -197,6 +207,28 @@ export default function AboutPage() {
               </ScrollReveal>
             ))}
           </div>
+          <ScrollReveal className="mt-10 text-center">
+            <Link
+              href="/plants"
+              className="group inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-accent"
+            >
+              See all our plants
+              <svg
+                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                />
+              </svg>
+            </Link>
+          </ScrollReveal>
         </div>
       </section>
     </>

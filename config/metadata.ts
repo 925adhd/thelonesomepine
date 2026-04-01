@@ -4,10 +4,13 @@ import { siteConfig } from "./site";
 export const baseMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    default: `${siteConfig.name} | Leitchfield, KY`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "houseplants Leitchfield KY",
     "plant shop Leitchfield Kentucky",

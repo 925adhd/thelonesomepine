@@ -6,7 +6,7 @@ import { storeImages } from "@/data/images";
 
 export function LocationPreview() {
   return (
-    <section className="py-16 sm:py-24 lg:py-32" aria-labelledby="location-heading">
+    <section id="location" className="scroll-mt-20 py-16 sm:py-24 lg:py-32" aria-labelledby="location-heading">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
         <ScrollReveal>
           <div className="relative overflow-hidden rounded-2xl bg-primary-dark sm:rounded-3xl">
@@ -70,8 +70,8 @@ export function LocationPreview() {
                 </div>
 
                 <Link
-                  href="/contact"
-                  className="group mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-xs font-semibold text-primary shadow-lg transition-all duration-300 hover:shadow-xl active:scale-[0.98] sm:mt-8 sm:px-8 sm:py-3.5 sm:text-sm"
+                  href="/visit"
+                  className="group mt-6 inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-primary shadow-lg transition-all duration-300 hover:shadow-xl active:scale-[0.98] sm:mt-8 sm:px-8 sm:py-3.5"
                 >
                   Get Directions
                   <svg
@@ -91,14 +91,14 @@ export function LocationPreview() {
                 </Link>
               </div>
 
-              {/* Image — desktop only */}
-              <div className="relative hidden aspect-[3/4] overflow-hidden rounded-2xl shadow-2xl lg:block">
+              {/* Image */}
+              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl shadow-2xl lg:aspect-[3/4]">
                 <Image
                   src={storeImages.rabbitHole.src}
                   alt={storeImages.rabbitHole.alt}
                   fill
                   className="object-cover"
-                  sizes="45vw"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
                 />
               </div>
             </div>
