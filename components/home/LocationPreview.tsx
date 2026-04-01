@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { siteConfig } from "@/config/site";
 import { storeImages } from "@/data/images";
 
 export function LocationPreview() {
@@ -35,45 +34,16 @@ export function LocationPreview() {
                   Come Say Hello
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-pine-200/80 sm:mt-6 sm:text-base lg:text-lg">
-                  Find us inside{" "}
-                  <a
-                    href={siteConfig.rabbitHoleFacebook}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-white underline decoration-pine-400/50 underline-offset-2 hover:decoration-white"
-                  >
-                    {siteConfig.vendorLocation.venue}
-                  </a>{" "}
-                  in Leitchfield.
+                  We&apos;re a small shop with a big love for plants.
+                  Stop by, browse around, and let us help you find
+                  the perfect one for your space.
                 </p>
-
-                {/* Compact contact info on mobile */}
-                <div className="mt-4 space-y-2 text-sm text-pine-200/80 sm:mt-6">
-                  <p>
-                    <span className="font-medium text-white">
-                      {siteConfig.vendorLocation.venue}
-                    </span>
-                    {" · "}
-                    {siteConfig.vendorLocation.street}
-                    {" · "}
-                    {siteConfig.vendorLocation.city},{" "}
-                    {siteConfig.vendorLocation.stateCode}
-                  </p>
-                  <p className="text-xs text-pine-300/60 sm:text-sm">
-                    <a
-                      href={`mailto:${siteConfig.email}`}
-                      className="hover:text-white"
-                    >
-                      {siteConfig.email}
-                    </a>
-                  </p>
-                </div>
 
                 <Link
                   href="/visit"
-                  className="group mt-6 inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-primary shadow-lg transition-all duration-300 hover:shadow-xl active:scale-[0.98] sm:mt-8 sm:px-8 sm:py-3.5"
+                  className="group mt-6 inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-primary shadow-lg transition-all duration-300 hover:shadow-xl active:scale-[0.98] sm:mt-8"
                 >
-                  Get Directions
+                  Hours &amp; Directions
                   <svg
                     className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1 sm:h-4 sm:w-4"
                     fill="none"
