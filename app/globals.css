@@ -26,6 +26,9 @@
   --color-warm-800: #5a3e19;
   --color-warm-900: #3d2b14;
 
+  /* Cream — warm off-white for mobile nav */
+  --color-cream: #f1e7dd;
+
   /* Semantic tokens */
   --color-primary: #1a3d21;
   --color-primary-light: #244f2c;

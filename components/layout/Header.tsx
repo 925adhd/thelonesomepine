@@ -167,7 +167,7 @@ export function Header() {
             href="/"
             className={cn(
               "flex items-center gap-2 font-[family-name:var(--font-western)] text-lg tracking-tight transition-colors duration-300 hover:opacity-80 sm:text-xl",
-              mobileMenuOpen ? "text-white" : "text-white sm:text-green-950"
+              mobileMenuOpen ? "text-cream" : "text-cream sm:text-green-950"
             )}
           >
             <Image
@@ -177,8 +177,8 @@ export function Header() {
               height={28}
               className={cn(
                 "h-6 w-auto transition-all duration-300 sm:h-7",
-                "brightness-0 invert sm:brightness-100 sm:invert-0",
-                mobileMenuOpen && "brightness-0 invert"
+                "brightness-0 invert sepia-[0.15] sm:brightness-100 sm:invert-0 sm:sepia-0",
+                mobileMenuOpen && "brightness-0 invert sepia-[0.15]"
               )}
               aria-hidden="true"
             />
@@ -209,7 +209,7 @@ export function Header() {
             type="button"
             className={cn(
               "flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition-colors duration-300 md:hidden",
-              mobileMenuOpen ? "text-white" : "text-white sm:text-gray-700"
+              mobileMenuOpen ? "text-cream" : "text-cream sm:text-gray-700"
             )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-expanded={mobileMenuOpen}
