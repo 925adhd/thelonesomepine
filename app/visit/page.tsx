@@ -145,6 +145,21 @@ export default function VisitPage() {
                     </address>
                   </div>
                 </div>
+                {/* Map */}
+                <hr className="my-6 border-border-light" />
+                <div className="overflow-hidden rounded-xl">
+                  <iframe
+                    title="The Rabbit Hole location in Leitchfield, Kentucky"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3148.0!2d-86.29469!3d37.48147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886880d0ae3e1c43%3A0x5e3e5e62c4d4c8a0!2s101%20N%20Heyser%20Dr%2C%20Leitchfield%2C%20KY%2042754!5e0!3m2!1sen!2sus!4v1711900000000"
+                    width="100%"
+                    height="200"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full"
+                  />
+                </div>
               </div>
             </ScrollReveal>
 
@@ -189,23 +204,6 @@ export default function VisitPage() {
               </div>
             </ScrollReveal>
           </div>
-
-          {/* Map */}
-          <ScrollReveal>
-            <div className="mt-6 overflow-hidden rounded-2xl ring-1 ring-border-light sm:mt-8">
-              <iframe
-                title="The Rabbit Hole location in Leitchfield, Kentucky"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3148.0!2d-86.29469!3d37.48147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886880d0ae3e1c43%3A0x5e3e5e62c4d4c8a0!2s101%20N%20Heyser%20Dr%2C%20Leitchfield%2C%20KY%2042754!5e0!3m2!1sen!2sus!4v1711900000000"
-                width="100%"
-                height="300"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full"
-              />
-            </div>
-          </ScrollReveal>
 
           {/* CTA card */}
           <ScrollReveal>
