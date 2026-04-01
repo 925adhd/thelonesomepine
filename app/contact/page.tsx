@@ -47,12 +47,12 @@ export default function ContactPage() {
       </section>
 
       {/* Main content */}
-      <section className="py-24 sm:py-32">
+      <section className="py-12 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
           <div className="grid items-start gap-8 lg:grid-cols-2">
             {/* Contact card */}
             <ScrollReveal>
-              <div className="overflow-hidden rounded-2xl bg-surface-warm p-8 ring-1 ring-border-light">
+              <div className="overflow-hidden rounded-2xl bg-surface-warm p-5 ring-1 ring-border-light sm:p-8">
                 <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-medium text-primary">
                   Get in Touch
                 </h2>
@@ -137,7 +137,7 @@ export default function ContactPage() {
 
             {/* Visit CTA card */}
             <ScrollReveal delay={150}>
-              <div className="overflow-hidden rounded-2xl bg-surface-warm p-8 ring-1 ring-border-light">
+              <div className="overflow-hidden rounded-2xl bg-surface-warm p-5 ring-1 ring-border-light sm:p-8">
                 <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-medium text-primary">
                   Visit In Person
                 </h2>

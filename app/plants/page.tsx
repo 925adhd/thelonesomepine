@@ -73,9 +73,9 @@ export default function PlantsPage() {
       </section>
 
       {/* Plant listings */}
-      <section className="py-24 sm:py-32">
+      <section className="py-12 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
-          <div className="space-y-24">
+          <div className="space-y-14 sm:space-y-24">
             {categoryOrder.map((category) => {
               const categoryPlants = categories[category];
               if (!categoryPlants?.length) return null;
@@ -107,7 +107,7 @@ export default function PlantsPage() {
 
           {/* CTA */}
           <ScrollReveal>
-            <div className="mt-24 rounded-3xl bg-surface-warm p-10 text-center sm:p-16">
+            <div className="mt-14 rounded-3xl bg-surface-warm p-6 text-center sm:mt-24 sm:p-10 lg:p-16">
               <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-medium text-primary sm:text-3xl">
                 Looking for something specific?
               </h2>

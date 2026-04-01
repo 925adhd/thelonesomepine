@@ -62,7 +62,7 @@ export function FeaturedPlants() {
   return (
     <section
       id="featured-plants"
-      className="scroll-mt-20 relative overflow-hidden py-24 sm:py-32"
+      className="scroll-mt-20 relative overflow-hidden py-12 sm:py-24 lg:py-32"
       aria-labelledby="featured-heading"
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
@@ -84,7 +84,7 @@ export function FeaturedPlants() {
         </div>
 
         {/* Asymmetric grid */}
-        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-12">
+        <div className="mt-10 grid gap-5 sm:mt-16 sm:grid-cols-2 lg:grid-cols-12">
           {featuredWithImages.map(({ plant, image }, i) => {
             const isExpanded = expandedId === plant.id && !isDesktop;
 
@@ -206,7 +206,7 @@ export function FeaturedPlants() {
         </div>
 
         {/* CTA */}
-        <ScrollReveal className="mt-16 text-center">
+        <ScrollReveal className="mt-10 text-center sm:mt-16">
           <Link
             href="/plants"
             className="group inline-flex items-center gap-3 rounded-full border border-primary bg-primary px-8 py-4 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-primary-light hover:shadow-lg active:scale-[0.98]"

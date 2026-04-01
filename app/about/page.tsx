@@ -145,7 +145,7 @@ export default function AboutPage() {
             </div>
           </ScrollReveal>
 
-          <div className="mt-16 grid gap-8 sm:grid-cols-3">
+          <div className="mt-10 grid gap-8 sm:mt-16 sm:grid-cols-3">
             {values.map((value, i) => (
               <ScrollReveal key={value.title} delay={i * 120}>
                 <div className="text-center">

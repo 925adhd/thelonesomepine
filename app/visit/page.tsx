@@ -47,12 +47,12 @@ export default function VisitPage() {
       </section>
 
       {/* Location + Hours cards */}
-      <section className="py-24 sm:py-32">
+      <section className="py-12 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
-          <div className="grid items-start gap-8 lg:grid-cols-2">
+          <div className="grid items-start gap-6 sm:gap-8 lg:grid-cols-2">
             {/* Location card */}
             <ScrollReveal>
-              <div className="overflow-hidden rounded-2xl bg-surface-warm p-8 ring-1 ring-border-light">
+              <div className="overflow-hidden rounded-2xl bg-surface-warm p-5 ring-1 ring-border-light sm:p-8">
                 <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-medium text-primary">
                   Location
                 </h2>
@@ -150,7 +150,7 @@ export default function VisitPage() {
 
             {/* Hours card */}
             <ScrollReveal delay={150}>
-              <div className="overflow-hidden rounded-2xl bg-surface-warm p-8 ring-1 ring-border-light lg:sticky lg:top-28">
+              <div className="overflow-hidden rounded-2xl bg-surface-warm p-5 ring-1 ring-border-light sm:p-8 lg:sticky lg:top-28">
                 <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-medium text-primary">
                   Hours
                 </h2>
@@ -192,7 +192,7 @@ export default function VisitPage() {
 
           {/* Map */}
           <ScrollReveal>
-            <div className="mt-8 overflow-hidden rounded-2xl ring-1 ring-border-light">
+            <div className="mt-6 overflow-hidden rounded-2xl ring-1 ring-border-light sm:mt-8">
               <iframe
                 title="The Rabbit Hole location in Leitchfield, Kentucky"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3148.0!2d-86.29469!3d37.48147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886880d0ae3e1c43%3A0x5e3e5e62c4d4c8a0!2s101%20N%20Heyser%20Dr%2C%20Leitchfield%2C%20KY%2042754!5e0!3m2!1sen!2sus!4v1711900000000"
@@ -209,7 +209,7 @@ export default function VisitPage() {
 
           {/* CTA card */}
           <ScrollReveal>
-            <div className="mt-8 overflow-hidden rounded-2xl bg-surface-warm p-8 text-center ring-1 ring-border-light">
+            <div className="mt-6 overflow-hidden rounded-2xl bg-surface-warm p-5 text-center ring-1 ring-border-light sm:mt-8 sm:p-8">
               <p className="text-sm text-text-muted">
                 Have a question before you visit?
               </p>

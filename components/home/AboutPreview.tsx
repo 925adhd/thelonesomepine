@@ -9,7 +9,7 @@ export function AboutPreview() {
   return (
     <section
       id="about-preview"
-      className="scroll-mt-20 relative overflow-hidden bg-surface-warm py-24 sm:py-32"
+      className="scroll-mt-20 relative overflow-hidden bg-surface-warm py-12 sm:py-24 lg:py-32"
       aria-labelledby="about-preview-heading"
     >
       {/* Video layer — behind everything, bleeds under the text */}

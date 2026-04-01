@@ -15,7 +15,7 @@ export function PlantGallery() {
   return (
     <section
       id="gallery"
-      className="scroll-mt-20 relative overflow-hidden bg-surface-warm py-24 sm:py-32"
+      className="scroll-mt-20 relative overflow-hidden bg-surface-warm py-12 sm:py-24 lg:py-32"
       aria-labelledby="gallery-heading"
     >
 
@@ -48,7 +48,7 @@ export function PlantGallery() {
         </ScrollReveal>
 
         {/* Masonry-style grid */}
-        <div className="mt-16 columns-2 gap-4 sm:columns-3 lg:gap-5">
+        <div className="mt-10 columns-2 gap-4 sm:mt-16 sm:columns-3 lg:gap-5">
           {galleryItems.map((image, i) => (
             <ScrollReveal key={image.src} delay={i * 80} animation="scale">
               <div className="group mb-4 overflow-hidden rounded-xl lg:mb-5">
