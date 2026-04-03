@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { DemoBanner } from "@/components/layout/DemoBanner";
 import { StickyLocationPin } from "@/components/ui/StickyLocationPin";
 import { baseMetadata } from "@/config/metadata";
 import { getLocalBusinessSchema, getOrganizationSchema } from "@/lib/structured-data";
@@ -57,8 +58,9 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+        <DemoBanner />
         <Header />
-        <main id="main-content" className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1" style={{ paddingTop: "var(--banner-height, 0px)" }}>{children}</main>
         <Footer />
         <StickyLocationPin />
       </body>

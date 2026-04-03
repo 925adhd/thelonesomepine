@@ -44,8 +44,9 @@ export function Header() {
       {/* Mobile Menu — slides in from right */}
       <div
         id="mobile-menu"
+        style={{ top: "var(--banner-height, 0px)" }}
         className={cn(
-          "fixed right-0 top-0 z-[90] flex h-full w-[280px] flex-col bg-pine-950 shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden",
+          "fixed right-0 z-[90] flex h-full w-[280px] flex-col bg-pine-950 shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden",
           mobileMenuOpen
             ? "pointer-events-auto translate-x-0"
             : "pointer-events-none translate-x-full"
@@ -151,8 +152,9 @@ export function Header() {
 
       {/* Header bar — always on top */}
       <header
+        style={{ top: "var(--banner-height, 0px)" }}
         className={cn(
-          "fixed left-0 right-0 top-0 z-[100] border-b shadow-sm backdrop-blur-md transition-colors duration-300",
+          "fixed left-0 right-0 z-[100] border-b shadow-sm backdrop-blur-md transition-colors duration-300",
           mobileMenuOpen
             ? "border-white/10 bg-pine-950"
             : "border-pine-800/30 bg-pine-950 sm:border-gray-200 sm:bg-white/90"
